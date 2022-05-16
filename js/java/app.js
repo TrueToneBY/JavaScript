@@ -1,170 +1,72 @@
-alert(6)
-//1 variable
-//var name = 'Pavel'
-const firstName = 'Pavel'
-const lastName = 'Litvinenko'
-let  age = 33
+// Number
 
-console.log(firstName,lastName,'age :  ' + age)
+const num = 42  //integer
+const float = 42.42  //float
+const pow = 10e3  //добавляет 3 нуля
 
-//2 мутирование
-console.log('Lest name :  ' + lastName)
-console.log(age)
 
-const lastName2 = prompt('Vvod lastName')
-alert(firstName  + '  ' + lastName2)
+console.log('Number.MAX_SAFE_INTEGER     ', Number.MAX_SAFE_INTEGER)
+console.log('Math.pow(2,53)-1    ', Math.pow(2,53)-1)
+console.log('Number.MIN_SAFE_INTEGER     ',Number.MIN_SAFE_INTEGER)
+console.log('Number.MAX_VALUE   ',Number.MAX_VALUE)
+console.log('Number.MIN_VALUE    ',Number.MIN_VALUE)
+console.log('Number.NEGATIVE_INFINITY    ',Number.NEGATIVE_INFINITY)
+console.log('Number.POSITIVE_INFINITY    ',Number.POSITIVE_INFINITY)
+console.log('2 / 0', 2 / 0)
+console.log(Number.NaN)  // Not A Number
+console.log(typeof NaN)
+console.log(2 / undefined)
+const weird = 2 / undefined
+console.log(isNaN(weird))
+console.log(Number.isNaN(42))
+console.log(Number.isFinite(Infinity))
+console.log(Number.isFinite(42))
 
-//3 Операторы
+const stringInt = '42'
+const stringFloat = '42.42'
+console.log(Number.parseInt(stringInt) + 2)
+console.log(parseInt(stringInt) + 2)
+console.log(Number(stringInt) + 2)
+console.log(+stringInt + 2)
 
-const currentYear = 2022
-const birthYear = 1989
+console.log(parseFloat(stringFloat) + 2)
+console.log(+stringFloat + 2)
 
-//const age2 = currentYear - birthYear
+console.log(0.4 + 0.2)   //0.6
+console.log(+(2 / 5) + (1 / 5).toFixed(1))
+console.log((0.4 + 0.2).toFixed(1)) //урезать значение
+console.log(parseFloat((0.4 + 0.2).toFixed(1)))
 
-const a = 10
-const b = 5
 
-let c = 33
-//c = c + a
-c += a
-c -= a
-c /= a
-c *= a
+// BigInt тип данных\
 
-age2 = a * b
-console.log(a + b)
-console.log(a - b)
-console.log(a / b)
-console.log(a * b)
-console.log(a % b)
-console.log(++age2)
-console.log(c)
+console.log(Number.MAX_SAFE_INTEGER)
+console.log(90071992547409919999999n)// n   BigInt
+console.log(typeof undefined)
 
-// 4 типы данных   google.com mdn operator precedence
 
-const isProgrammer = true
-const name = 'Pavel'
-let age3 = 33
+// console.log(10n - 4)  error
+console.log(parseInt(10n) - 4)
+console.log(10n - BigInt(4))
 
-console.log(typeof isProgrammer)
-console.log(typeof name)
-console.log(typeof age3)
-console.log(null)
+//   3  Math
+console.log(Math.E)
+console.log(Math.PI)
 
-// 5 приоритет оператора
+console.log(Math.sqrt(25))
+console.log(Math.pow(5,3))
+console.log(Math.abs(-42))
+console.log(Math.max(42,100,110))
+console.log(Math.min(42,100,110))
+console.log(Math.floor(4.9))
+console.log(Math.ceil(4.9))
+console.log(Math.random())
+console.log(Math.trunc(4.9))
 
-const fillAge1 = 26
-const birthYear1 = 1993
-const  currentYear1 = 2020
+// 4 Example
 
-const isFullAge = currentYear1 - birthYear >= fillAge1
-console.log(isFullAge)
-
-// 6 условные операторы
-const courseStatus = 'fail' // ready,fail, pending
-
-if (courseStatus === 'ready'){
-  console.log('Курс уже готов и его можно проходить')
-}else if(courseStatus === 'pending'){
-  console.log('Курс находится в процессе разработки')
-}else {
-  console.log('Курс не получился')
-}
-const isReady = true
-if (isReady === true){
-  console.log('ВсЕ готово')
-}else {
-  console.log(' все не готово')
+function getRandomBetween(min,max){
+  return Math.floor(Math.random() *(max - min) + min + 1)  // округляет в большую сторону
 }
 
-isReady ? console.log('ВсЕ готово!') : console.log('ВсЕ не готово')  //тернарное выражения
-
-const num2 = 42 // number
-const num3 = '42' // string
-
-console.log(num2 == num3)
-
-
-//  7 Булевая логика
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators
-
-
-//  8 Функция
-
-function calculateAge(year){
-  return 2020 - year
-}
-
-const myAge = calculateAge(1993)
-console.log(myAge)
-
-function logInfoAbout(name, year){
-  const  age = calculateAge(year)
-
-  if(age > 0){
-    console.log('Человек по имени  '+ name + '  сейчас имеет возраст  ' + year)
-  }else {
-    console.log('Вообще-то это будущее')
-  }
-
-
-}
-logInfoAbout('Pavel',1989)
-logInfoAbout("Anastasiya",1989)
-logInfoAbout('Pavel',2023)
-
-// 9 Массивы
- const  cars = ['Мазда',  'Мерседес' , 'BMW']
-
-const  cars1 = new Array('Мазда',  'Мерседес' , 'BMW')
-console.log(cars)
-console.log(cars1)
-
-console.log(cars1[0])
-console.log(cars[2])
-console.log(cars.length)
-
-cars[0] = 'Porsche'
-console.log(cars)
-cars[3] = 'Mazda'
-console.log(cars)
-cars[cars.length] = 'Volvo'
-console.log(cars)
-
-// 10 Циклы
-const cars3 = ['Мазда',  'Мерседес' , 'BMW']
-
-for (let i = 0;i < cars3.length;i++){
-  const car = cars3[i]
-  console.log(car)
-}
-
-for (let car of cars3){
-  console.log(car)
-}
-
-// 11 Объекты
-
-const person = {
-  firstName1: 'Pavel',
-  lastName1:  'Litvinenka',
-  year:  '1989',
-  languages: ['Rus','En','De'],
-  hasWife: false,
-  greet : function (){
-    console.log('greet of function')
-  }
-}
-
-console.log(person.firstName1)
-person.greet()
-console.log(person['lastName1'])
-const key = 'yaer'
-console.log(person[key])
-person.hasWife = true
-person.isProgrammer = true
-
-console.log(person)
-
-
-
+console.log(getRandomBetween(10, 42));
