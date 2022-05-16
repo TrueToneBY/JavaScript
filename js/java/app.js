@@ -1,72 +1,50 @@
-// Number
+const name = 'Pavel'
+const age = 26
 
-const num = 42  //integer
-const float = 42.42  //float
-const pow = 10e3  //добавляет 3 нуля
+// const output = 'Привет меня зовут  '+ name + '  и мой возраст ' + age + '  лет'
+const  output = `Привет , меня зовут ${name} и мой возрас ${age < 20 ? 'A' : 'B'} лет`
 
+console.log(output)
 
-console.log('Number.MAX_SAFE_INTEGER     ', Number.MAX_SAFE_INTEGER)
-console.log('Math.pow(2,53)-1    ', Math.pow(2,53)-1)
-console.log('Number.MIN_SAFE_INTEGER     ',Number.MIN_SAFE_INTEGER)
-console.log('Number.MAX_VALUE   ',Number.MAX_VALUE)
-console.log('Number.MIN_VALUE    ',Number.MIN_VALUE)
-console.log('Number.NEGATIVE_INFINITY    ',Number.NEGATIVE_INFINITY)
-console.log('Number.POSITIVE_INFINITY    ',Number.POSITIVE_INFINITY)
-console.log('2 / 0', 2 / 0)
-console.log(Number.NaN)  // Not A Number
-console.log(typeof NaN)
-console.log(2 / undefined)
-const weird = 2 / undefined
-console.log(isNaN(weird))
-console.log(Number.isNaN(42))
-console.log(Number.isFinite(Infinity))
-console.log(Number.isFinite(42))
+const output1 = `
+<div>This is div<div
+<p>This is o</p>
+`
+console.log(output1)
 
-const stringInt = '42'
-const stringFloat = '42.42'
-console.log(Number.parseInt(stringInt) + 2)
-console.log(parseInt(stringInt) + 2)
-console.log(Number(stringInt) + 2)
-console.log(+stringInt + 2)
+const name1 = 'Pavel'
+console.log(name1.length)
+console.log(name1.toUpperCase())
+console.log(name1.toLowerCase())
+console.log(name1.charAt(3))
+console.log(name1.indexOf('el'))
+console.log(name1.toLowerCase().startsWith('pav'))
+console.log(name1.startsWith('pav'))
+console.log(name1.endsWith('el'))
+console.log(name1.repeat(3))
 
-console.log(parseFloat(stringFloat) + 2)
-console.log(+stringFloat + 2)
+const string = '         password'
+console.log(string.trim())
+console.log(string.trimLeft())
+console.log(string.trimRight())
 
-console.log(0.4 + 0.2)   //0.6
-console.log(+(2 / 5) + (1 / 5).toFixed(1))
-console.log((0.4 + 0.2).toFixed(1)) //урезать значение
-console.log(parseFloat((0.4 + 0.2).toFixed(1)))
-
-
-// BigInt тип данных\
-
-console.log(Number.MAX_SAFE_INTEGER)
-console.log(90071992547409919999999n)// n   BigInt
-console.log(typeof undefined)
-
-
-// console.log(10n - 4)  error
-console.log(parseInt(10n) - 4)
-console.log(10n - BigInt(4))
-
-//   3  Math
-console.log(Math.E)
-console.log(Math.PI)
-
-console.log(Math.sqrt(25))
-console.log(Math.pow(5,3))
-console.log(Math.abs(-42))
-console.log(Math.max(42,100,110))
-console.log(Math.min(42,100,110))
-console.log(Math.floor(4.9))
-console.log(Math.ceil(4.9))
-console.log(Math.random())
-console.log(Math.trunc(4.9))
-
-// 4 Example
-
-function getRandomBetween(min,max){
-  return Math.floor(Math.random() *(max - min) + min + 1)  // округляет в большую сторону
+function logPerson(s,name1,age1){
+  if (age1 < 0){
+    age1 = 'еще не родился'
+  }
+  console.log(s,name1,age1)
+  return `${s[0]}${name1}${s[1]}${age1}${s[2]}`
 }
+const personName = 'pavel'
+const personName2 = "Maxim"
+const age2 = -10
+const age1 = 33
+const output2 = logPerson`Имя : ${personName}, Возрос т : ${age1}`
 
-console.log(getRandomBetween(10, 42));
+const output3 = logPerson`Имя : ${personName2}, Возраст : ${age2}`
+
+console.log(output3)
+
+
+
+//TODO  Hello World  продолжай учиться))
